@@ -1,0 +1,267 @@
+М1. Метод deposit()
+1.  if (blocked)
+2.  if (!blocked)
+3. Убитый
+4. depositZero, depositUnblocked, depositBlocked, depositResultExceedBound
+
+М2. Метод deposit()
+1. return false;
+2. return true;
+3. Убитый
+4. depositBlocked
+
+М3. Метод deposit()
+1.  else if (sum < 0 || sum > bound || sum >= bound - balance)
+2.  else if (sum <= 0 || sum > bound || sum >= bound - balance)
+3. Убитый
+4. depositZero
+
+М4. Метод deposit()
+1.  else if (sum < 0 || sum > bound || sum >= bound - balance)
+2.  else if (sum < 0 || sum >= bound || sum >= bound - balance)
+3. Не убитый
+
+М5. Метод deposit()
+1. else if (sum < 0 || sum > bound || sum >= bound - balance)
+2. else if (sum < 0 || sum > bound || sum > bound - balance)
+3. Не убитый
+
+М6. Метод deposit()
+1.  else if (sum < 0 || sum >= bound || sum >= bound - balance)
+2.  else if (sum < 0 || sum >= bound || sum >= bound + balance)
+3. Убитый
+4. depositResultExceedBound
+
+М7. Метод deposit()
+1.  else if (sum < 0 || sum > bound || sum >= bound - balance)
+2.  else if (!(sum < 0) || sum > bound || sum >= bound - balance)
+3. Убитый
+4. depositZero, depositUnblocked, depositNegative, depositResultExceedBound
+
+М8. Метод deposit()
+1.  else if (sum < 0 || sum > bound || sum >= bound - balance)
+2.  else if (sum < 0 || !(sum > bound) || sum >= bound - balance)
+3. Убитый
+4. depositZero, depositUnblocked, depositResultExceedBound
+
+М9. Метод deposit()
+1.  else if (sum < 0 || sum > bound || sum >= bound - balance)
+2.  else if (sum < 0 || sum > bound || !(sum >= bound - balance))
+3. Убитый
+4. depositZero, depositUnblocked, depositResultExceedBound
+
+М10. Метод deposit()
+1.  return false
+2.  return true
+3. Убитый
+4. depositNegative, depositArgExceedBound, depositResultExceedBound, withdrawResultExceedBound
+
+М11. Метод deposit()
+1. balance += sum;
+2. balance -= sum;
+3. Убитый
+4. depositUnblocked, depositResultExceedBound
+
+М12. Метод deposit()
+1.  return true
+2.  return false
+3. Убитый
+4. depositZero, depositResultExceedBound
+
+М13. Метод withdraw()
+1.  if (blocked)
+2.  if (!blocked)
+3. Убитый
+4. withdrawUnblocked, withdrawBlocked, unblock
+
+М14. Метод withdraw()
+1.  return false
+2.  return true
+3. Убитый
+4. withdrawBlocked
+
+М15. Метод withdraw()
+1. else if (sum < 0 || sum > bound)
+2. else if (sum <= 0 || sum > bound)
+3. Не убитый
+
+М16. Метод withdraw()
+1. else if (sum < 0 || sum > bound)
+2. else if (sum < 0 || sum >= bound)
+3. Не убитый
+
+М17. Метод withdraw()
+1. else if (sum < 0 || sum > bound)
+2. else if (!(sum < 0) || sum > bound)
+3. Убитый
+4. withdrawUnblocked, withdrawNegative, unblock
+
+М18. Метод withdraw()
+1. else if (sum < 0 || sum > bound)
+2. else if (sum < 0 || !(sum > bound))
+3. Убитый
+4. withdrawUnblocked, unblock
+
+М19. Метод withdraw()
+1. return false
+2. return true
+3. Убитый
+4. withdrawNegative, withdrawArgExceedBound, withdrawResultExceedBound
+
+
+М20. Метод withdraw()
+1. else if (balance <= maxCredit + sum)
+2. else if (balance < maxCredit + sum)
+3. Не убитый
+
+М21. Метод withdraw()
+1. else if (balance < maxCredit + sum)
+2. else if (balance < maxCredit - sum)
+3. Убитый
+4. withdrawUnblockedExceedMaxCredit
+
+М22. Метод withdraw()
+1. else if (balance < maxCredit + sum)
+2. else if (!(balance < maxCredit + sum))
+3. Убитый
+4. withdrawUnblockedExceedMaxCredit, withdrawUnblocked, unblock
+
+М23. Метод withdraw()
+1. return false;
+2. return true;
+3. Убитый
+4. withdrawUnblockedExceedMaxCredit
+
+М24. Метод withdraw()
+1. balance -= sum
+2. balance += sum
+3. Убитый
+4. withdrawUnblocked, unblock
+
+М25. Метод withdraw()
+1. return true
+2. return false
+3. Убитый
+4. withdrawUnblocked
+
+М26. Метод getBalance()
+1. return balance;
+2. return 0;
+3. Убитый
+4. depositUnblocked, withdrawUnblocked, depositResultExceedBound
+
+М27. Метод getMaxCredit()
+1. return -maxCredit;
+2. return maxCredit;
+3. Убитый
+4. getMaxCredit, changeMaxCreditBlocked
+
+М28. Метод getMaxCredit()
+1. return -maxCredit;
+2. return 0;
+3. Убитый
+4. getMaxCredit, changeMaxCreditBlocked
+
+М29. Метод isBlocked()
+1. return blocked;
+2. return false;
+3. Убитый
+4. unblock
+
+М30. Метод isBlocked()
+1. return blocked;
+2. return true;
+3. Убитый
+4. unblock
+
+М31. Метод unblock()
+1. if (balance < maxCredit)
+2. if (balance <= maxCredit)
+3. Убитый
+4. unblock
+
+М32. Метод unblock()
+1. if (balance < maxCredit)
+2. if (balance >= maxCredit)
+3. Убитый
+4. unblock
+
+М33. Метод unblock()
+1. return false;
+2. return true;
+3. Убитый
+4. unblock
+
+М34. Метод unblock()
+1. return true
+2. return false
+3. Убитый
+4. unblock
+
+М35. Метод setMaxCredit
+1. if (mc < 0 || mc > bound || !blocked)
+2. if (mc <= 0 || mc > bound || !blocked)
+3. Не убитый
+
+М36. Метод setMaxCredit
+1. if (mc < 0 || mc > bound || !blocked)
+2. if (mc < 0 || mc => bound || !blocked)
+3. Не убитый
+
+М37. Метод setMaxCredit
+1. if (mc < 0 || mc > bound || !blocked)
+2. if (mc >= 0 || mc > bound || !blocked)
+3. Убитый
+4. getMaxCredit, changeMaxCreditInvalidArgBlocked, unblock, changeMaxCreditBlocked
+
+М38. Метод setMaxCredit
+1. if (mc < 0 || mc > bound || !blocked)
+2. if (mc < 0 || mc <= bound || !blocked)
+3. Убитый
+4. getMaxCredit, changeMaxCreditInvalidArgBlocked, unblock, changeMaxCreditBlocked
+
+М39. Метод setMaxCredit
+1. if (mc < 0 || mc > bound || !blocked)
+2. if (mc < 0 || mc > bound || blocked)
+3. Убитый
+4. getMaxCredit, changeMaxCreditUnblocked, unblock, changeMaxCreditBlocked
+
+М40. Метод setMaxCredit
+1. return false
+2. return true
+3. Убитый
+4. getMaxCredit, changeMaxCreditInvalidArgBlocked, changeMaxCreditUnblocked, changeMaxCreditInvalidArgUnblocked
+
+М41. Метод setMaxCredit
+1. maxCredit = -mc
+2. maxCredit = mc
+3. Убитый
+4. unblock, getMaxCredit, changeMaxCreditUnblocked, changeMaxCreditBlocked
+
+М42. Метод setMaxCredit
+1. return true
+2. return false
+3. Убитый
+4. changeMaxCreditBlocked
+М43. Метод getBound
+1. return bound
+2. return 0
+3. Убитый
+4. withdrawArgExceedBound, changeMaxCreditInvalidArgBlocked, depositArgExceedBound, depositResultExceedBound
+
+========================
+
+Всех выживших мутантов по сути можно считать эквивалентными, если верить https://pitest.org/quickstart/basic_concepts/
+в части "The resulting mutant behaves differently but in a way that is outside the scope of testing.",
+потому что они все на граничные значения, которые мы не проверяли)
+
+Вручную можно придумать что-нибудь такое:
+
+M44. Метод deposit
+1. if (blocked)
+       return false;
+   else if (sum < 0 || sum > bound || sum >= bound - balance)
+       return false;
+2. if (blocked || sum < 0 || sum > bound || sum >= bound - balance)
+       return false;
+3. Эквивалентный
